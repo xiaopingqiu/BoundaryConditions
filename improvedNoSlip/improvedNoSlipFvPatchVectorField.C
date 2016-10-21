@@ -46,7 +46,7 @@ Foam::improvedNoSlipFvPatchVectorField::improvedNoSlipFvPatchVectorField
     const dictionary& dict
 )
 :
-    fixedValueFvPatchVectorField(p, iF)
+    fixedValueFvPatchVectorField(p, iF, dict)
 {}
 
 
@@ -127,6 +127,7 @@ Foam::tmp<Foam::Field<Foam::vector> > Foam::improvedNoSlipFvPatchVectorField::gr
 void Foam::improvedNoSlipFvPatchVectorField::write(Ostream& os) const
 {
     fvPatchVectorField::write(os);
+    this->writeEntry("value", os);
 }
 
 
