@@ -1,0 +1,2 @@
+improvedNoSlip/
+LIB = $(FOAM_LIBBIN)/libfiniteVolume
