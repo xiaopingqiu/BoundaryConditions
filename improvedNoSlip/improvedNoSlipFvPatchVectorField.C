@@ -127,6 +127,7 @@ Foam::improvedNoSlipFvPatchVectorField::gradientBoundaryCoeffs() const
 void Foam::improvedNoSlipFvPatchVectorField::write(Ostream& os) const
 {
     fvPatchVectorField::write(os);
+    this->writeEntry("value", os);
 }
 
 
