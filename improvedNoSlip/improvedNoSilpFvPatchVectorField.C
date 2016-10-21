@@ -108,7 +108,19 @@ Foam::improvedNoSlipFvPatchVectorField::gradientBoundaryCoeffs()
     vectorField iF = this->patchInternalField();
 
     forAll(expCoeffs, faceI)
-    {}
+    {
+	expCoeffs[faceI][0] = vt[faceI][0] + 
+	                      n[faceI][0]*n[faceI][1]*iF[faceI][1] +
+			      n[faceI][0]*n[faceI][2]*iF[faceI][2];
+	expCoeffs[faceI][1] = vt[faceI][1] + 
+	                      n[faceI][0]*n[faceI][1]*iF[faceI][0] +
+			      n[faceI][1]*n[faceI][2]*iF[faceI][2];
+	expCoeffs[faceI][2] = vt[faceI][2] + 
+	                      n[faceI][0]*n[faceI][2]*iF[faceI][0] +
+			      n[faceI][1]*n[faceI][2]*iF[faceI][1];
+    }
+
+    return expCoeffs*this->patch().deltaCoeffs();
 }
 
 
