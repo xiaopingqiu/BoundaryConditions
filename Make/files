@@ -1,2 +1,2 @@
-improvedNoSlip/
-LIB = $(FOAM_LIBBIN)/libfiniteVolume
+improvedNoSlip/improvedNoSlipFvPatchVectorField.C
+LIB = $(FOAM_USER_LIBBIN)/libimprovedBoundaryConditions

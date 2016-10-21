@@ -83,7 +83,7 @@ Foam::improvedNoSlipFvPatchVectorField::improvedNoSlipFvPatchVectorField
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 Foam::tmp<Foam::Field<Foam::vector> >
-Foam::improvedNoSlipFvPatchVectorField::gradientInternalCoeffs()
+Foam::improvedNoSlipFvPatchVectorField::gradientInternalCoeffs() const
 {
     vectorField n = this->patch().nf();
     vectorField impCoeffs(this->size(), Zero);
@@ -99,7 +99,7 @@ Foam::improvedNoSlipFvPatchVectorField::gradientInternalCoeffs()
 }
 
 Foam::tmp<Foam::Field<Foam::vector> >
-Foam::improvedNoSlipFvPatchVectorField::gradientBoundaryCoeffs()
+Foam::improvedNoSlipFvPatchVectorField::gradientBoundaryCoeffs() const
 {
     vectorField n = this->patch().nf();
     vectorField expCoeffs(this->size(), Zero);
